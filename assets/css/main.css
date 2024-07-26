@@ -1205,8 +1205,9 @@ input, select, textarea {
 		list-style: none;
 		margin: 0 0 1.5rem 0;
 		padding-left: 0;
+		list-style-type: none;
 	}
-
+	
 		ul.grid-icons .icon {
 			display: block;
 			position: relative;
@@ -3687,17 +3688,61 @@ input, select, textarea {
 			}
 
 	}
-	.text-and-image {
+	.wrapper {
 		display: flex;
-		align-items: center;
+		flex-direction: column;
+		min-height: 80vh; /* Ensure the wrapper takes up at least the full viewport height */
+		padding: 20px;
 	}
-	.text-and-image p {
-	margin-right: 20px;
-	padding-left: 20px;
+	.content {
+		flex: 1; /* Allows the content to take up available space */
+	}
+	.container {
+		display: flex;
+		gap: 20px; /* Adds space between the two divs */
+		margin-top: 10px; /* Adds some space between the text and the container */
+	}
+	.text-and-image {
+		padding: 10px; /* Optional: Adds padding inside the divs */
+	}
+	.panel.banner.right {
+		display: flex;
+		align-items: top;
+		justify-content: space-between;
+	  }
+	  
+	  .panel.banner.right .content {
+		flex: 1;
+		padding-right: 10px; /* Adjust as needed */
+	  }
+	  
+	  .panel.banner.right .image {
+		flex: 1;
+	  }
+	  
+	  .panel.banner.right .image img {
+		max-width: 100%;
+		height: auto;
+	  }
+	  
+	  .image.filtered {
+		position: relative; /* Ensures the container is positioned relative for the GIF positioning */
 	}
 	
-	.text-and-image img {
-	max-width: 100%; 
-	height: auto;
+	.image.filtered img {
+		max-width: 100%; /* Ensures the image fits within the container */
+		height: auto; /* Maintains the image's aspect ratio */
 	}
-	  
+	
+	.gif-container {
+		position: absolute; /* Positions the GIF absolutely within the .image.filtered container */
+		top: 10px; /* Adjust to position the GIF from the top */
+		left: 10px; /* Adjust to position the GIF from the left */
+		z-index: 10; /* Ensures the GIF appears above the image */
+	}
+	
+	.gif-container img {
+		width: 100px; /* Adjust width as needed */
+		height: auto; /* Maintains aspect ratio */
+	}
+	
