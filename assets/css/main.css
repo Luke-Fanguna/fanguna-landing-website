@@ -3736,8 +3736,8 @@ input, select, textarea {
 	
 	.gif-container {
 		position: absolute; /* Positions the GIF absolutely within the .image.filtered container */
-		top: 10px; /* Adjust to position the GIF from the top */
-		left: 10px; /* Adjust to position the GIF from the left */
+		top: 400px; /* Adjust to position the GIF from the top */
+		left: 200px; /* Adjust to position the GIF from the left */
 		z-index: 10; /* Ensures the GIF appears above the image */
 	}
 	
